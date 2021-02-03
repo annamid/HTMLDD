@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function haalElementenOp(){
+            let fotoslider = document.getElementById("fotoslider");
+            console.log(fotoslider);
+
+            let eersteFotoDiv = document.querySelector('foto');
+            console.log(eersteFotoDiv);
+
+            let alleFotoDivs = document.querySelectorAll('foto');
+            console.log(alleFotoDivs); 
+
+            fotoslider.className = 'fotoslider';
+            fotoslider.style.borderColor = '#0000FF';
+            fotoslider.style.borderStyle = 'solid';
+            fotoslider.style.borderWidth = '5px';
+            fotoslider.position = 'absolute';
+            fotoslider.left = '100px';
+            for (let i = 0; i < alleFotoDivs.length; i++) {
+                let item = alleFotoDivs[i];
+                console.log(item);
+                item.style.border="50px solid #0000F";
+            }           
+        }
+        window.addEventListener('DOMContentLoaded', haalElementenOp)
+    </script>
+</head>
+
+
+<body>
+    <div id="fotoslider">
+        <div id="foto"><img src="images/JHOPE.jpg"></div>
+        <div id="foto"><img src="images/JIMIN.jpg"></div>
+        <div id="foto"><img src="images/JIN.jpg"></div>
+        <div id="foto"><img src="images/JK.jpg"></div>
+        <div id="foto"><img src="images/RM.jpg"></div>
+        <div id="foto"><img src="images/SUGA.jpg"></div>
+        <div id="foto"><img src="images/TAE.jpg"></div>
+    </div>
+</body>
+</html>

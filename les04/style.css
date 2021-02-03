@@ -1,0 +1,54 @@
+#fotoslider {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    transition-property: left;
+    transition-duration: 700ms;
+    transition-timing-function:cubic-bezier(0,0,1,1);
+}
+
+.foto {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#viewport {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+}
+
+#controls {
+    margin-top: 10px;
+}
+
+body {
+    background-color: aliceblue
+}
+
+#vorige-btn {
+    background-color:azure;
+    color: cadetblue;
+    border-color: cadetblue;
+}
+
+#volgende-btn {
+    background-color:azure;
+    color: cadetblue;
+    border-color: cadetblue;
+}

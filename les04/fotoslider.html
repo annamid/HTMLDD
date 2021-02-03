@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fotoslider</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let fotonummer, fotobreedte, aantalfotos, fotoslider;
+        function setupFotoslider() {
+            fotonummer = 0;
+            fotobreedte = 300;
+
+            fotoslider = document.getElementById('fotoslider');
+            let volgendeKnop = document.getElementById('volgende-btn');
+            let vorigeKnop = document.getElementById('vorige-btn');
+
+            aantalfotos = fotoslider.children.length;
+            console.log(aantalfotos);
+
+            volgendeKnop.addEventListener('click', Volgendefoto);
+            vorigeKnop.addEventListener('click', Vorigefoto);
+        }
+
+        function Volgendefoto() {
+            fotonummer += 1;
+            if (fotonummer === aantalfotos) {
+                fotonummer = 0;
+            }
+            let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+            fotoslider.style.left = afstandNaarLinks + "px";
+        }
+
+        function Vorigefoto() {
+            fotonummer -= 1;
+            if (fotonummer < 0) {
+                fotonummer = aantalfotos - 1;
+            }
+            let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+            fotoslider.style.left = afstandNaarLinks + "px";
+        }
+
+        window.addEventListener('DOMContentLoaded', setupFotoslider)
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="flex">
+        <div id="viewport">
+            <div id="fotoslider">
+                <div class="foto"><img src="images/JHOPE.jpg"></div>
+                <div class="foto"><img src="images/JIMIN.jpg"></div>
+                <div class="foto"><img src="images/JIN.jpg"></div>
+                <div class="foto"><img src="images/JK.jpg"></div>
+                <div class="foto"><img src="images/RM.jpg"></div>
+                <div class="foto"><img src="images/SUGA.jpg"></div>
+                <div class="foto"><img src="images/TAE.jpg"></div>
+            </div>
+        </div>
+        <div id="controls">
+        <button id="vorige-btn" class="knop">vorige</button>
+        <button id="volgende-btn" class="knop">volgende</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
